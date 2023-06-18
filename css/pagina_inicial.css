@@ -92,7 +92,7 @@ body {
 }
 /*estilo seção de inicio*/
 section#inicio {
-    background-image: url("../seminario/img/home.jpg");
+    background-image: url("../img/home.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

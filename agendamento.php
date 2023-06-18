@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $hoje = date('Y-m-d');
 
 // Cria a consulta SQL para buscar os agendamentos do dia atual
-$sql = "SELECT * FROM agendamentos WHERE data_hora >= '$hoje 08:00:00' AND data_hora <= '$hoje 17:00:00' ORDER BY data_hora";
+$sql = "SELECT * FROM agendamentos WHERE data_hora >= '08:00:00' AND data_hora <= '17:00:00' ORDER BY data_hora";
 
 // Executa a consulta SQL
 $result = $conn->query($sql);
@@ -87,9 +87,12 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Sistema de Agendamento</title>
     <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/agenda.css">
+    
+    
 </head>
 <body>
-    <h1>Sistema de Agendamento</h1>
+    <h1 class="title">Sistema de Agendamento</h1>
 
     <?php if ($error !== '' && $error !== 'Agendamento criado com sucesso!'): ?>
         <p style="color: red;"><?php echo $error; ?></p>
@@ -110,31 +113,24 @@ $conn->close();
 
             <label for="data_hora">Data e Hora:</label>
             <input type="datetime-local" name="data_hora" required><br><br>
-
-        <input type="submit" value="Agendar">
+            <button type="submit">Agendar</button>
         </form>
     </main>
 
 <h2>Agendamentos Marcados</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Data e Hora</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($agendamentos as $agendamento): ?>
+
+    <div class="lista">
+    <?php foreach ($agendamentos as $agendamento): ?>
+        <div class="item">
+            <img src="../seminario/img/logo.jpeg" alt="Foto da Barbearia">
             <tr>
-                <td><?php echo $agendamento['nome']; ?></td>
-                <td><?php echo $agendamento['email']; ?></td>
-                <td><?php echo $agendamento['telefone']; ?></td>
-                <td><?php echo date('d/m/Y H:i', strtotime($agendamento['data_hora'])); ?></td>
+                <h2>Nome: <?php echo $agendamento['nome']; ?></h2>
+                <h2>Data e Hora: <?php echo date('d/m/Y H:i', strtotime($agendamento['data_hora'])); ?></h2>
             </tr>
+        </div>
         <?php endforeach; ?>
-    </tbody>
-</table>
+    </div>
+    
 </body>
 </html>
+

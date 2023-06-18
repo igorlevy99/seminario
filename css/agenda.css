@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/* Formatação estilo pagina */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+    
+}
+
+/* Estilização do titulo */
+h1.title{
+    background-color: #808080;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    }
+
+/* Estilização do subtitulo */
+h2{
+    color: black;
+    padding: 10px;
+    text-align: center;
+    }
+
+/* Estilização do formulário */
+form{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    display: flex;
+    }
+
+/* Estilização do Nomes dos campos a serem preenchidos */
+form label{
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: black;
+    }
+/* Estilização campo de preenchimento */
+form input{
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    outline: none;
+    flex: 1;
+    background-color: #808080;
+    color: black;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    } 
+
+/* Estilização do Botão */
+form button{
+    padding: 5px 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    }
+
+/* Estilização seleção do Botão */
+form button:hover{
+    background-color: rgb(77, 20, 20);
+    }   
+
+/* Estilização lista de agendamentos */
+div.lista{
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    }
+
+/* Estilização itens lista de agendamentos */
+div.item{
+    padding: 10px;
+    width: 200px;
+    border: 2px solid brown;
+    border-radius: 5px;
+    margin: 5px;
+    color: black;  
+    }
+
+/* Estilização titulos itens lista de agendamentos */
+div.item h2{
+    width: 200px;
+    display: flex;
+    word-break: break-word;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    }
+/* Estilização fundo itens lista de agendamentos */
+div.item:hover{
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+    transition: 0.5s;
+    }
+/* Estilização imagem do itens da lista de agendamentos */    
+div.item img{
+    width: 100%;
+    border: 1px solid brown;
+    border-radius: 5px;
+    }
